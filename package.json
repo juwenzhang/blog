@@ -7,6 +7,8 @@
     "dev:server": "pnpm run -r -F server dev",
     "dev:client": "pnpm run -r -F client dev",
     "dev:admin": "pnpm run -r -F admin dev",
+    "build:client": "pnpm run -r -F client build",
+    "build:admin": "pnpm run -r -F admin build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "keywords": [
