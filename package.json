@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev:server": "pnpm run -r -F server dev",
+    "dev:client": "pnpm run -r -F client dev",
+    "dev:admin": "pnpm run -r -F admin dev",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "keywords": [
