@@ -1,9 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { useRoutes } from 'react-router-dom';
+import routes from "@/routes/index";
 
 const App = () => {
+  const Router = useRoutes(routes);
   return (
     <React.Fragment>
-      <h1>Hello World</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        {Router}
+      </Suspense>
     </React.Fragment>
   );
 };
