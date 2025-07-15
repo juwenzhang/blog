@@ -1,0 +1,25 @@
+{
+  "name": "cli",
+  "version": "1.0.2",
+  "description": "",
+  "type": "module",
+  "bin": {
+    "blog-cli": "./dist/main.js"
+  },
+  "scripts": {
+    "build": "tsup --config tsup.prod.config.ts && ts-node ./utils/copy-package.ts",
+    "dev": "tsup --config tsup.dev.config.ts && ts-node-dev --respawn --transpile-only utils/copy-package.ts",
+    "release": "standard-version"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.9.0",
+  "devDependencies": {
+    "@types/node": "^24.0.13",
+    "standard-version": "^9.5.0",
+    "ts-node-dev": "^2.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "~5.8.3"
+  }
+}

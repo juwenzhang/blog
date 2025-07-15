@@ -9,6 +9,7 @@
     "dev:admin": "pnpm run -r -F admin dev",
     "build:client": "pnpm run -r -F client build",
     "build:admin": "pnpm run -r -F admin build",
+    "build:cli": "pnpm run -r -F cli build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "keywords": [
@@ -24,6 +25,7 @@
   "license": "MIT",
   "packageManager": "pnpm@10.9.0",
   "devDependencies": {
+    "@changesets/cli": "^2.29.5",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "conventional-changelog-cli": "^5.0.0",
