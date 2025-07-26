@@ -2,31 +2,31 @@ import fs from 'fs'
 import path from 'path'
 
 export const getMainDir: () => string = () => {
-  const mainFilePath = process.argv[1];
-  if (!mainFilePath) {
-    throw new Error('无法获取主入口文件路径，请确保通过 node main.js 方式执行');
-  }
-  return path.dirname(mainFilePath);
+    const mainFilePath = process.argv[1];
+    if (!mainFilePath) {
+        throw new Error('无法获取主入口文件路径，请确保通过 node main.js 方式执行');
+    }
+    return path.dirname(mainFilePath);
 };
 
 export const getEnvPath: () => string = () => {
-  if (process.env.ENV_PATH) {
-    return path.resolve(process.env.ENV_PATH);
-  }
-  const mainDir = getMainDir();
-  const env = process.env.NODE_ENV || 'development'
-  const envFiles = [
-    '.env',         
-    '.env.test'     
-  ];
-
-  for (const fileName of envFiles) {
-    const envPath = path.resolve(mainDir, fileName);
-    if (fs.existsSync(envPath)) {
-      return envPath;
+    if (process.env.ENV_PATH) {
+        return path.resolve(process.env.ENV_PATH);
     }
-  }
-  throw new Error(`在 main.js 同级目录中未找到以下 env 文件: ${envFiles.join(', ')}`);
+    const mainDir = getMainDir();
+    const env = process.env.NODE_ENV || 'development'
+    const envFiles = [
+        '.env',         
+        '.env.test'     
+    ];
+
+    for (const fileName of envFiles) {
+        const envPath = path.resolve(mainDir, fileName);
+        if (fs.existsSync(envPath)) {
+            return envPath;
+        }
+    }
+    throw new Error(`在 main.js 同级目录中未找到以下 env 文件: ${envFiles.join(', ')}`);
 };
 
 export const compilerEnvContentToObject
@@ -54,3 +54,5 @@ const getTypeFromenv: () => Record<string, string> = () => {
 }
 
 export default getTypeFromenv
+export type TypeFromEnv = ReturnType<typeof getTypeFromenv>
+export type TypeEnvContentToObject = ReturnType<typeof compilerEnvContentToObject>

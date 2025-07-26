@@ -5,7 +5,6 @@ const getPathConstants: () => {
     __filename: string; 
     __dirname: string 
 } = () => {
-
     if (typeof import.meta.url === 'string') {
         const __filename = fileURLToPath(import.meta.url)
         const __dirname = path.dirname(__filename)
@@ -22,3 +21,4 @@ const getPathConstants: () => {
 }
 
 export default getPathConstants
+export type PathConstants = ReturnType<typeof getPathConstants>

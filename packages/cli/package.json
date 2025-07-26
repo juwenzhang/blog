@@ -16,10 +16,14 @@
   "license": "MIT",
   "packageManager": "pnpm@10.9.0",
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^24.0.13",
     "standard-version": "^9.5.0",
     "ts-node-dev": "^2.0.0",
     "tsup": "^8.5.0",
     "typescript": "~5.8.3"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.0"
   }
 }

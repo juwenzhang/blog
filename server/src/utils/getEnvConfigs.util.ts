@@ -1,6 +1,6 @@
 import dotenvx from '@dotenvx/dotenvx'
-import getPathConstants from './getPathContants.ts'
-import getTypeFromenv, { getEnvPath } from './getTypeFromenv.ts'
+import getPathConstants from './getPathContants.util.ts'
+import getTypeFromenv, { getEnvPath } from './getTypeFromenv.util.ts'
 
 const envObject: Record<string, string> = getTypeFromenv()
 interface EnvObject<T> {
@@ -18,3 +18,4 @@ const getEnvConfigs: () => { env: EnvObject<typeof envObject> } = <T>() => {
 }
 
 export default getEnvConfigs
+export type EnvConfigs = ReturnType<typeof getEnvConfigs>

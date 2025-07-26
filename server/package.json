@@ -5,7 +5,7 @@
   "type": "module",
   "main": "main.ts",
   "scripts": {
-    "dev": "ts-node ./main.ts --watch",
+    "dev": "node ../scripts/hot-reload.js server ./main.ts",
     "build:test": "tsup --config tsup.dev.ts && pnpm run copy-env:test",
     "build": "tsup --config tsup.prod.ts && pnpm run copy-env:prod",
     "copy-env:test": "node ../scripts/copy-env.js test",
@@ -20,11 +20,12 @@
   "packageManager": "pnpm@10.9.0",
   "dependencies": {
     "@dotenvx/dotenvx": "^1.48.3",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
-    "ts-node": "^10.9.2",
     "typescript": "~5.8.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.15",
     "tsup": "^8.5.0"

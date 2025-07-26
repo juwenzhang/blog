@@ -1,4 +1,4 @@
-import { type ResponseType } from '../types/ResponseType.ts';
+import { type ResponseType } from '../types/ResponseType.type.ts';
 
 export const StatusCode = {
   SUCCESS: 0,
